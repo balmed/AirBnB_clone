@@ -150,11 +150,11 @@ class HBNBCommand(cmd.Cmd):
         """Usage: count <class> or <class>.count()
         Retrieve the number of instances of a given class."""
         argl = parse(arg)
-        count = 0
+        cpt = 0
         for obj in storage.all().values():
             if argl[0] == obj.__class__.__name__:
-                count += 1
-        print(count)
+                cpt += 1
+        print(cpt)
 
     def do_update(self, arg):
         """Usage: update <class> <id> <attribute_name> <attribute_value> or

@@ -33,10 +33,10 @@ class TestCity_instantiation(unittest.TestCase):
         self.assertEqual(datetime, type(City().updated_at))
 
     def test_state_id_is_public_class_attribute(self):
-        cy = City()
+        cy1 = City()
         self.assertEqual(str, type(City.state_id))
-        self.assertIn("state_id", dir(cy))
-        self.assertNotIn("state_id", cy.__dict__)
+        self.assertIn("state_id", dir(cy1))
+        self.assertNotIn("state_id", cy1.__dict__)
 
     def test_name_is_public_class_attribute(self):
         cy = City()
@@ -111,11 +111,11 @@ class TestCity_save(unittest.TestCase):
             pass
 
     def test_one_save(self):
-        cy = City()
+        cy0 = City()
         sleep(0.05)
-        first_updated_at = cy.updated_at
-        cy.save()
-        self.assertLess(first_updated_at, cy.updated_at)
+        first_updated_at = cy0.updated_at
+        cy0.save()
+        self.assertLess(first_updated_at, cy0.updated_at)
 
     def test_two_saves(self):
         cy = City()

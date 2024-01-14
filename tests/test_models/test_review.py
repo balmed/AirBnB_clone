@@ -168,8 +168,8 @@ class TestReview_to_dict(unittest.TestCase):
         self.assertIn("my_number", rv.to_dict())
 
     def test_to_dict_datetime_attributes_are_strs(self):
-        rv = Review()
-        rv_dict = rv.to_dict()
+        rv1 = Review()
+        rv_dict = rv1.to_dict()
         self.assertEqual(str, type(rv_dict["id"]))
         self.assertEqual(str, type(rv_dict["created_at"]))
         self.assertEqual(str, type(rv_dict["updated_at"]))
